@@ -964,7 +964,7 @@ CXWindowsScreen::saveShape()
 	  xrrs = XRRSizes(m_display, DefaultScreen(m_display), &numScreens);
 	  XRRRotations(m_display, DefaultScreen(m_display), &rotation);
 	  if (xrrs != NULL) {
-	    if (rotation & !(RR_Rotate_90|RR_Rotate_270) ){
+	    if (!(rotation & (RR_Rotate_90|RR_Rotate_270)) ){
 	      m_w = xrrs->width;
 	      m_h = xrrs->height;
 	    } else {
